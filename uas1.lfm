@@ -1,0 +1,265 @@
+object Form1: TForm1
+  Left = 222
+  Height = 427
+  Top = 145
+  Width = 544
+  Caption = 'Form1'
+  ClientHeight = 427
+  ClientWidth = 544
+  OnCreate = FormCreate
+  LCLVersion = '3.0.0.1'
+  object DBNavigator1: TDBNavigator
+    Left = 32
+    Height = 25
+    Top = 272
+    Width = 481
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 481
+    DataSource = DataSource1
+    Options = []
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 32
+    Height = 144
+    Top = 128
+    Width = 480
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 56
+    Height = 30
+    Top = 24
+    Width = 435
+    Caption = 'DATA HARGA MAKANAN DATA COSTUMER'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 32
+    Height = 15
+    Top = 314
+    Width = 35
+    Caption = 'Nama:'
+  end
+  object Label3: TLabel
+    Left = 32
+    Height = 15
+    Top = 368
+    Width = 35
+    Caption = 'Harga:'
+  end
+  object Label4: TLabel
+    Left = 159
+    Height = 15
+    Top = 314
+    Width = 47
+    Caption = 'Kategori:'
+  end
+  object Label5: TLabel
+    Left = 160
+    Height = 15
+    Top = 368
+    Width = 26
+    Caption = 'Stok:'
+  end
+  object Label6: TLabel
+    Left = 272
+    Height = 15
+    Top = 314
+    Width = 39
+    Caption = 'Satuan:'
+  end
+  object DBEnama: TDBEdit
+    Left = 32
+    Height = 23
+    Top = 328
+    Width = 80
+    DataField = 'nama'
+    DataSource = DataSource1
+    MaxLength = 255
+    TabOrder = 2
+    OnChange = DBEnamaChange
+  end
+  object DBEharga: TDBEdit
+    Left = 32
+    Height = 23
+    Top = 384
+    Width = 80
+    DataField = 'harga'
+    DataSource = DataSource1
+    MaxLength = 255
+    TabOrder = 3
+  end
+  object DBEkategori: TDBEdit
+    Left = 160
+    Height = 23
+    Top = 328
+    Width = 80
+    DataField = 'kategori'
+    DataSource = DataSource1
+    MaxLength = 255
+    TabOrder = 4
+  end
+  object DBEstok: TDBEdit
+    Left = 160
+    Height = 23
+    Top = 384
+    Width = 80
+    DataField = 'stok'
+    DataSource = DataSource1
+    Alignment = taRightJustify
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object DBEsatuan: TDBEdit
+    Left = 272
+    Height = 23
+    Top = 328
+    Width = 80
+    DataField = 'satuan'
+    DataSource = DataSource1
+    MaxLength = 255
+    TabOrder = 6
+  end
+  object btnkeluar: TButton
+    Left = 437
+    Height = 25
+    Top = 312
+    Width = 75
+    Caption = 'Keluar'
+    OnClick = btnkeluarClick
+    TabOrder = 7
+  end
+  object btntambah: TButton
+    Left = 304
+    Height = 25
+    Top = 376
+    Width = 75
+    Caption = 'Tambah'
+    OnClick = btntambahClick
+    TabOrder = 8
+  end
+  object btnedit: TButton
+    Left = 392
+    Height = 25
+    Top = 376
+    Width = 75
+    Caption = 'Edit'
+    OnClick = btneditClick
+    TabOrder = 9
+  end
+  object btnhapus: TButton
+    Left = 464
+    Height = 25
+    Top = 376
+    Width = 75
+    Caption = 'Hapus'
+    OnClick = btnhapusClick
+    TabOrder = 10
+  end
+  object ODBCConnection1: TODBCConnection
+    Connected = True
+    LoginPrompt = False
+    KeepConnection = True
+    Params.Strings = (
+      'DBQ=C:\Users\MULTIMEDIA\Documents\Database1.mdb'
+      'Locale Identifier=1031'
+      'ExtendedAnsiSQL=1'
+      'CHARSET=ansi'
+    )
+    Transaction = SQLTransaction1
+    Driver = 'Microsoft Access Driver (*.mdb, *.accdb)'
+    Left = 80
+    Top = 72
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = ODBCConnection1
+    Left = 208
+    Top = 72
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        Attributes = [faReadonly]
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'nama'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'kategori'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'satuan'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'harga'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'stok'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'Nama Costumer'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'Jumlah beli'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = ODBCConnection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from barang'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    UsePrimaryKeyAsKey = False
+    Left = 328
+    Top = 72
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 432
+    Top = 72
+  end
+end
