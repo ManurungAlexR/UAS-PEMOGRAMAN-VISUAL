@@ -123,3 +123,73 @@ begin
 end;
 
 end.
+
+.
+
+.
+
+.
+
+kode untuk transaksi penjualan
+unit Transaksipenjualan;
+
+{$mode ObjFPC}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, odbcconn, SQLDB, DB, Forms, Controls, Graphics, Dialogs,
+  StdCtrls, DBGrids, DBCtrls;
+
+type
+
+  { TForm2 }
+
+  TForm2 = class(TForm)
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    Label1: TLabel;
+    ODBCConnection1: TODBCConnection;
+    SQLQuery1: TSQLQuery;
+    SQLTransaction1: TSQLTransaction;
+    procedure DBNavigator1Click(Sender: TObject; Button: TDBNavButtonType);
+    procedure FormCreate(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
+    procedure ODBCConnection1AfterConnect(Sender: TObject);
+  private
+
+  public
+
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm2 }
+
+procedure TForm2.ODBCConnection1AfterConnect(Sender: TObject);
+begin
+
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure TForm2.Label1Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm2.DBNavigator1Click(Sender: TObject; Button: TDBNavButtonType);
+begin
+
+end;
+
+end.
