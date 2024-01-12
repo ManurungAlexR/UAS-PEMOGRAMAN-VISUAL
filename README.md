@@ -130,7 +130,7 @@ end.
 
 .
 
-kode untuk transaksi penjualan
+# kode untuk transaksi penjualan
 unit Transaksipenjualan;
 
 {$mode ObjFPC}{$H+}
